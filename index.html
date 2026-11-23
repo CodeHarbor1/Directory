@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Directory | CodeHarbor1</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            color: #24292f;
+        }
+
+        header {
+            background: #24292f;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin: 0;
+        }
+
+        header p {
+            color: #c9d1d9;
+            margin-top: 10px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            transition: transform 0.2s,
+                        box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px #00000015;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 18px;
+            background: #24292f;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .card a:hover {
+            background: #0969da;
+        }
+
+        /* Center the 7th card */
+        .centered {
+            grid-column: 1 / -1;
+            width: 250px;
+            justify-self: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            main {
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Directory</h1>
+        <p>Projects by CodeHarbor1</p>
+    </header>
+
+    <main>
+
+        <div class="links">
+
+            <div class="card">
+                <h2>Chooser</h2>
+                <p>Spin a dial.</p>
+                <a href="https://codeharbor1.github.io/Chooser"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>NextTurn</h2>
+                <p>Display whose turn it is.</p>
+                <a href="https://codeharbor1.github.io/NextTurn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Canvas</h2>
+                <p>Draw on a canvas.</p>
+                <a href="https://codeharbor1.github.io/Canvas"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>WhiteBoard</h2>
+                <p>Write on a WhiteBoard.</p>
+                <a href="https://codeharbor1.github.io/WhiteBoard"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Roller</h2>
+                <p>Roll some dice.</p>
+                <a href="https://codeharbor1.github.io/Roller"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card">
+                <h2>Sounds</h2>
+                <p>Generate Sound Effects.</p>
+                <a href="https://codeharbor1.github.io/Sounds"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+            <div class="card centered">
+                <h2>SayAnything (NSFW)</h2>
+                <p>Generate SayAnything questions.</p>
+                <a href="https://codeharbor1.github.io/SayAnything"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Project →
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+</html>
