@@ -2,244 +2,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>CodeHarbor1 | Directory</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #171717;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #fff;
+            padding: 35px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(32px, 6vw, 44px);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        header p {
+            margin: 12px 0 0;
+            color: #777;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .directory-image {
+            text-align: center;
+            padding: 20px 15px 0;
+        }
+
+        .directory-image img {
+            width: 150px;
+            height: auto;
+            max-width: 80%;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 12px 20px;
+            flex: 1;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            min-width: 0;
+            min-height: 190px;
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            background: #f0f0f0;
+            border-color: #bbb;
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            margin: 5px 0;
+            font-size: clamp(18px, 3vw, 23px);
+            font-weight: 600;
+            letter-spacing: -0.4px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 10px 0 15px;
+        }
+
+        .card a {
+            display: block;
+            width: 100%;
+            max-width: 190px;
+            padding: 12px 8px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+        }
+
+        .card a:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        .card a:active {
+            transform: scale(0.96);
+        }
+
+        /* QR Code Button */
+
+        .qr-toggle {
+            margin-top: 12px;
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 190px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            color: #222;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+
+        .qr-toggle:hover {
+            background: #e8e8e8;
+        }
+
+        /* QR Code Image */
+
+        .qr-container {
+            display: none;
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .qr-container img {
+            width: 150px;
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            padding: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #888;
+            font-size: 13px;
+            border-top: 1px solid #e5e5e5;
+            background: #fafafa;
+            letter-spacing: 0.4px;
+        }
+
+        @media (max-width: 550px) {
+            .links {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .card {
+                min-height: 175px;
+            }
+
+            header {
+                padding: 35px 15px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            main {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 15px 10px;
+                min-height: 165px;
+            }
+
+            .card a,
+            .qr-toggle {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
 
 <header>
     <h1>📁 Directory</h1>
     <p>Projects by CodeHarbor1</p>
 </header>
-<div style="text-align: center; padding: 20px 15px 0;">
-    <img src="directory.png"
-         style="width: 150px; height: auto; max-width: 80%;">
+
+<div class="directory-image">
+    <img src="QRCodes/Directory.png" alt="Directory QR Code">
 </div>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #171717;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background: #fff;
-    padding: 45px 15px;
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-header h1 {
-    margin: 0;
-    font-size: clamp(32px, 6vw, 44px);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-}
-
-header p {
-    margin: 12px 0 0;
-    color: #777;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-}
-
-main {
-    width: 100%;
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 12px 20px;
-    flex: 1;
-}
-
-.links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-}
-
-.card {
-    min-width: 0;
-    min-height: 190px;
-    background: #f8f8f8;
-    border: 1px solid #e5e5e5;
-    border-radius: 14px;
-    padding: 22px 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s;
-}
-
-.card:hover {
-    background: #f0f0f0;
-    border-color: #bbb;
-    transform: translateY(-3px);
-}
-
-.card h2 {
-    margin: 5px 0;
-    font-size: clamp(18px, 3vw, 23px);
-    font-weight: 600;
-    letter-spacing: -0.4px;
-}
-
-.card p {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 10px 0 15px;
-}
-
-.card a {
-    display: block;
-    width: 100%;
-    max-width: 190px;
-    padding: 12px 8px;
-    border: 1px solid #222;
-    border-radius: 8px;
-    background: #222;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-    letter-spacing: 0.4px;
-    transition: background 0.2s, color 0.2s, transform 0.15s;
-}
-
-.card a:hover {
-    background: #fff;
-    color: #111;
-}
-
-.card a:active {
-    transform: scale(0.96);
-}
-
-footer {
-    text-align: center;
-    padding: 25px 15px;
-    color: #888;
-    font-size: 13px;
-    border-top: 1px solid #e5e5e5;
-    background: #fafafa;
-    letter-spacing: 0.4px;
-}
-
-@media (max-width: 550px) {
-    .links {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .card {
-        min-height: 175px;
-    }
-
-    header {
-        padding: 35px 15px;
-    }
-}
-
-@media (max-width: 350px) {
-    main {
-        padding: 10px;
-    }
-
-    .card {
-        padding: 15px 10px;
-        min-height: 165px;
-    }
-
-    .card a {
-        font-size: 12px;
-    }
-}
-</style>
-</head>
-
-<body>
-
 
 <main>
 
-<div class="links">
+    <div class="links">
 
-    <div class="card">
-        <h2>🎯 Chooser</h2>
-        <p>Spin a dial.</p>
-        <a href="https://codeharbor1.github.io/Chooser">OPEN PROJECT →</a>
-    </div>
+        <!-- Chooser -->
+        <div class="card">
+            <h2>🎯 Chooser</h2>
+            <p>Spin a dial.</p>
 
-    <div class="card">
-        <h2>🔄 NextTurn</h2>
-        <p>Display whose turn it is.</p>
-        <a href="https://codeharbor1.github.io/NextTurn">OPEN PROJECT →</a>
-    </div>
+            <a href="https://codeharbor1.github.io/Chooser">OPEN PROJECT →</a>
 
-    <div class="card">
-        <h2>🎨 Canvas</h2>
-        <p>Draw on a canvas.</p>
-        <a href="https://codeharbor1.github.io/Canvas">OPEN PROJECT →</a>
-    </div>
+            <button class="qr-toggle" onclick="toggleQR('qr-chooser', this)">
+                SHOW QR CODE
+            </button>
 
-    <div class="card">
-        <h2>📝 WhiteBoard</h2>
-        <p>Write on a WhiteBoard.</p>
-        <a href="https://codeharbor1.github.io/WhiteBoard">OPEN PROJECT →</a>
-    </div>
+            <div class="qr-container" id="qr-chooser">
+                <img src="QRCodes/Chooser.png" alt="Chooser QR Code">
+            </div>
+        </div>
 
-    <div class="card">
-        <h2>🎲 Roller</h2>
-        <p>Roll some dice.</p>
-        <a href="https://codeharbor1.github.io/Roller">OPEN PROJECT →</a>
-    </div>
+        <!-- NextTurn -->
+        <div class="card">
+            <h2>🔄 NextTurn</h2>
+            <p>Display whose turn it is.</p>
 
-    <div class="card">
-        <h2>🔊 Sounds</h2>
-        <p>Generate Sound Effects.</p>
-        <a href="https://codeharbor1.github.io/Sounds">OPEN PROJECT →</a>
-    </div>
+            <a href="https://codeharbor1.github.io/NextTurn">OPEN PROJECT →</a>
 
-    <div class="card">
-        <h2>1️⃣2️⃣3️⃣ Number</h2>
-        <p>Generate a Random Number.</p>
-        <a href="https://codeharbor1.github.io/Number">OPEN PROJECT →</a>
-    </div>
-    
-    <div class="card">
-        <h2>🐺 Werewolf</h2>
-        <p>Play Werewolf, a Blood on The Clock Tower (social deduction) inspired game.</p>
-        <a href="https://codeharbor1.github.io/Werewolf">OPEN PROJECT →</a>
-    </div>
+            <button class="qr-toggle" onclick="toggleQR('qr-nextturn', this)">
+                SHOW QR CODE
+            </button>
 
-    <div class="card">
-        <h2>🎉 SayAnything (NSFW)</h2>
-        <p>Generate SayAnything questions.</p>
-        <a href="https://codeharbor1.github.io/SayAnything">OPEN PROJECT →</a>
-    </div>
+            <div class="qr-container" id="qr-nextturn">
+                <img src="QRCodes/NextTurn.png" alt="NextTurn QR Code">
+            </div>
+        </div>
 
-</div>
+        <!-- Canvas -->
+        <div class="card">
+            <h2>🎨 Canvas</h2>
+            <p>Draw on a canvas.</p>
+
+            <a href="https://codeharbor1.github.io/Canvas">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-canvas', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-canvas">
+                <img src="QRCodes/Canvas.png" alt="Canvas QR Code">
+            </div>
+        </div>
+
+        <!-- WhiteBoard -->
+        <div class="card">
+            <h2>📝 WhiteBoard</h2>
+            <p>Write on a WhiteBoard.</p>
+
+            <a href="https://codeharbor1.github.io/WhiteBoard">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-whiteboard', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-whiteboard">
+                <img src="QRCodes/WhiteBoard.png" alt="WhiteBoard QR Code">
+            </div>
+        </div>
+
+        <!-- Roller -->
+        <div class="card">
+            <h2>🎲 Roller</h2>
+            <p>Roll some dice.</p>
+
+            <a href="https://codeharbor1.github.io/Roller">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-roller', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-roller">
+                <img src="QRCodes/Roller.png" alt="Roller QR Code">
+            </div>
+        </div>
+
+        <!-- Sounds -->
+        <div class="card">
+            <h2>🔊 Sounds</h2>
+            <p>Generate Sound Effects.</p>
+
+            <a href="https://codeharbor1.github.io/Sounds">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-sounds', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-sounds">
+                <img src="QRCodes/Sounds.png" alt="Sounds QR Code">
+            </div>
+        </div>
+
+        <!-- Number -->
+        <div class="card">
+            <h2>1️⃣2️⃣3️⃣ Number</h2>
+            <p>Generate a Random Number.</p>
+
+            <a href="https://codeharbor1.github.io/Number">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-number', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-number">
+                <img src="QRCodes/Number.png" alt="Number QR Code">
+            </div>
+        </div>
+
+        <!-- Werewolf -->
+        <div class="card">
+            <h2>🐺 Werewolf</h2>
+            <p>Play Werewolf, a Blood on The Clock Tower (social deduction) inspired game.</p>
+
+            <a href="https://codeharbor1.github.io/Werewolf">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-werewolf', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-werewolf">
+                <img src="QRCodes/Werewolf.png" alt="Werewolf QR Code">
+            </div>
+        </div>
+
+        <!-- SayAnything -->
+        <div class="card">
+            <h2>🎉 SayAnything (NSFW)</h2>
+            <p>Generate SayAnything questions.</p>
+
+            <a href="https://codeharbor1.github.io/SayAnything">OPEN PROJECT →</a>
+
+            <button class="qr-toggle" onclick="toggleQR('qr-sayanything', this)">
+                SHOW QR CODE
+            </button>
+
+            <div class="qr-container" id="qr-sayanything">
+                <img src="QRCodes/SayAnything.png" alt="SayAnything QR Code">
+            </div>
+        </div>
+
+    </div>
 
 </main>
 
 <footer>
     CodeHarbor1 | Project Directory
 </footer>
+
+<script>
+    function toggleQR(id, button) {
+        const qr = document.getElementById(id);
+
+        if (qr.style.display === "block") {
+            qr.style.display = "none";
+            button.textContent = "SHOW QR CODE";
+        } else {
+            qr.style.display = "block";
+            button.textContent = "HIDE QR CODE";
+        }
+    }
+</script>
 
 </body>
 </html>
